@@ -103,14 +103,26 @@ const ManageStatistical = () => {
           <button
             onClick={() => handleGetDataByMonth(year)}
             type="button"
-            style={{ padding: "10px", fontSize: 18, marginRight: 10 }}
+            style={{
+              padding: "10px",
+              fontSize: 18,
+              marginRight: 10,
+              background: !isToggle && "#6395F9",
+              color: !isToggle && "white",
+            }}
           >
-            Thống kê theo doanh thu
+          Thống kê theo doanh thu
           </button>
           <button
             onClick={() => handleGetDataByUser(year)}
             type="button"
-            style={{ padding: "10px", fontSize: 18, marginRight: 10 }}
+            style={{
+              padding: "10px",
+              fontSize: 18,
+              marginRight: 10,
+              background: isToggle && "#6395F9",
+              color: isToggle && "white",
+            }}
           >
             Top khách hàng
           </button>
@@ -122,10 +134,14 @@ const ManageStatistical = () => {
         </div>
       </div>
       {data.length <= 0 ? (
-        <h1 style={{width: "100%", textAlign: "center"}}>Hiện tại không có dữ liệu</h1>
+        <h1 style={{ width: "100%", textAlign: "center" }}>
+          Hiện tại không có dữ liệu
+        </h1>
       ) : (
-          <div>
-            <h2 style={{width: "100%", textAlign: 'center', marginBottom: 20}}>Thông kê doanh thu theo { !isToggle ? 'năm' : 'tháng'}</h2>
+        <div>
+          <h2 style={{ width: "100%", textAlign: "center", marginBottom: 20 }}>
+            Thông kê doanh thu theo {!isToggle ? "năm" : "tháng"}
+          </h2>
           <Column {...config} columnStyle={{ width: "100px" }} />
         </div>
       )}
