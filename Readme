@@ -1,2 +1,3 @@
 - Add confirm account template in client\src\pages\ConfirmAccount\ConfirmAccount.jsx;
 - Add chart template in client\src\pages\Admin\ManageStatistical\index.jsx
+- Update route <Route path="/confirm/:token" element={<ConfirmAccount />} /> in client\src\App.js
