@@ -1,0 +1,42 @@
+.seat-car {
+  h4 {
+    text-align: center;
+    font-size: 32px;
+    text-transform: capitalize;
+  }
+  &__single {
+    max-width: 400px;
+    margin: auto;
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+      div {
+        display: flex;
+        column-gap: 10px;
+      }
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    &--available,
+    &--unavailable {
+      border-radius: 0;
+      width: 90px;
+      height: 45px;
+      font-size: 18px;
+    }
+    &--available {
+      background: #109310;
+      border-color: #109310;
+      color: #fff;
+    }
+    &--unavailable {
+      background: #d9d9d9;
+      border-color: #d9d9d9;
+      color: #000;
+    }
+  }
+}
