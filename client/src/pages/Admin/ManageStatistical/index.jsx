@@ -65,30 +65,28 @@ const ManageStatistical = () => {
   // Trả về biểu đồ cột hoặc thanh
   const handleChange = (e) => {
     const { value } = e.target;
+    setYear(value);
     if (value === "") {
       if (!isToggle) {
-        handleGetDataByUser(parseInt(2023));
-      } else {
         handleGetDataByMonth(parseInt(2023));
+      } else {
+        handleGetDataByUser(parseInt(2023));
       }
       return;
-    } 
+    }
     if (value.length > 4) {
       return notification.info({
         message: "Số năm không lớn hơn 4 kí tự, vui lòng nhập lại !",
         duration: 4,
       });
-    } 
-    else {
+    } else {
       if (!isToggle) {
-          handleGetDataByUser(parseInt(value))
-        }
-      else {
         handleGetDataByMonth(parseInt(value));
-        }
+      } else {
+        handleGetDataByUser(parseInt(value));
+      }
     }
-
-  }
+  };
   return (
     <>
       <div
@@ -111,10 +109,12 @@ const ManageStatistical = () => {
               color: !isToggle && "white",
             }}
           >
-          Thống kê theo doanh thu
+            Thống kê theo doanh thu
           </button>
           <button
-            onClick={() => handleGetDataByUser(year)}
+            onClick={() => {
+              handleGetDataByUser(year);
+            }}
             type="button"
             style={{
               padding: "10px",
@@ -130,7 +130,12 @@ const ManageStatistical = () => {
 
         <div className="">
           <h3>Nhập số năm</h3>
-          <input type="number" style={{ padding: 5 }} onChange={handleChange} />
+          <input
+            value={year}
+            type="number"
+            style={{ padding: 5 }}
+            onChange={handleChange}
+          />
         </div>
       </div>
       {data.length <= 0 ? (
