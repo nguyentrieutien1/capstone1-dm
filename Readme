@@ -1,2 +1,2 @@
-- Add confirm account in client\src\pages\ConfirmAccount\ConfirmAccount.jsx;
-- Chart 
+- Add confirm account template in client\src\pages\ConfirmAccount\ConfirmAccount.jsx;
+- Add chart template in client\src\pages\Admin\ManageStatistical\index.jsx
